@@ -1,3 +1,5 @@
+// import { RickMorty } from "./app/services/rickmorti.service.js"; // ESTE SERVICIO NO EXISTE || ES UN EJEMPLO
+
 const promesas = [
     fetch("https://rickandmortyapi.com/api/character")
     .then((resp) => resp.json()),
@@ -20,7 +22,7 @@ Promise.allSettled(promesas).then(data => console.log(data))
 
 //Arreglo de promesas
 const promesas2 = [
-    //desde servicios
+    //DESDE SERVICIOS || NO EXISTEN || SON UN EJEMPLO
     rickMorty.rickMortyAPI1(),
     rickMorty.rickMortiAPI2()
 ]
