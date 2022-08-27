@@ -13,3 +13,27 @@ const promesas = [
 ]
 
 Promise.allSettled(promesas).then(data => console.log(data))
+
+
+
+/*:::::::::::::::::::::::::::: EJEMPLO DE ARREGLO VARIAS PROMESAS CON SERVICIOS FUNIÓN CALLBACK ::::::::::::::::::::::::::::*/
+
+//Arreglo de promesas
+const promesas2 = [
+    //desde servicios
+    rickMorty.rickMortyAPI1(),
+    rickMorty.rickMortiAPI2()
+]
+
+//Función Callback con control de promesas allSettled
+const getData = (callback) => {
+    Promise.allSettled(promesas2)
+        .then(data => callback(data))
+        .catch(error => console.log(error))
+        .finally(() => console.log("Arreglo de promesas terminado"))
+}
+
+//Encendido función obtención de data
+getData(data => {
+    console.log(data)
+})
